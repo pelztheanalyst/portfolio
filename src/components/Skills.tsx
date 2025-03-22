@@ -7,7 +7,6 @@ import {
   PieChart,
   FileSpreadsheet,
   Code,
-  Languages,
   Terminal,
   BrainCircuit,
   Network,
@@ -17,7 +16,6 @@ import {
 
 interface Skill {
   name: string;
-  level: number;
   color: string;
   icon: React.ReactNode;
 }
@@ -32,34 +30,34 @@ const Skills = () => {
     {
       title: "Data Analysis & Visualization",
       skills: [
-        { name: "Python", level: 85, color: "bg-blue-500", icon: <Code className="w-4 h-4" /> },
-        { name: "R", level: 80, color: "bg-sky-500", icon: <Code className="w-4 h-4" /> },
-        { name: "SQL", level: 90, color: "bg-indigo-500", icon: <Database className="w-4 h-4" /> },
-        { name: "Tableau", level: 95, color: "bg-data-blue", icon: <BarChart3 className="w-4 h-4" /> },
-        { name: "Power BI", level: 85, color: "bg-yellow-500", icon: <PieChart className="w-4 h-4" /> },
-        { name: "Excel", level: 95, color: "bg-green-500", icon: <FileSpreadsheet className="w-4 h-4" /> },
+        { name: "Python", color: "bg-blue-500", icon: <Code className="w-4 h-4" /> },
+        { name: "R", color: "bg-sky-500", icon: <Code className="w-4 h-4" /> },
+        { name: "SQL", color: "bg-indigo-500", icon: <Database className="w-4 h-4" /> },
+        { name: "Tableau", color: "bg-data-blue", icon: <BarChart3 className="w-4 h-4" /> },
+        { name: "Power BI", color: "bg-yellow-500", icon: <PieChart className="w-4 h-4" /> },
+        { name: "Excel", color: "bg-green-500", icon: <FileSpreadsheet className="w-4 h-4" /> },
       ],
     },
     {
       title: "Programming & Tools",
       skills: [
-        { name: "Pandas", level: 80, color: "bg-blue-500", icon: <BrainCircuit className="w-4 h-4" /> },
-        { name: "NumPy", level: 75, color: "bg-cyan-500", icon: <Terminal className="w-4 h-4" /> },
-        { name: "scikit-learn", level: 70, color: "bg-orange-500", icon: <BrainCircuit className="w-4 h-4" /> },
-        { name: "Git", level: 65, color: "bg-red-500", icon: <Code className="w-4 h-4" /> },
-        { name: "Jupyter", level: 90, color: "bg-orange-500", icon: <Terminal className="w-4 h-4" /> },
-        { name: "MATLAB", level: 60, color: "bg-purple-500", icon: <Terminal className="w-4 h-4" /> },
+        { name: "Pandas", color: "bg-blue-500", icon: <BrainCircuit className="w-4 h-4" /> },
+        { name: "NumPy", color: "bg-cyan-500", icon: <Terminal className="w-4 h-4" /> },
+        { name: "scikit-learn", color: "bg-orange-500", icon: <BrainCircuit className="w-4 h-4" /> },
+        { name: "Git", color: "bg-red-500", icon: <Code className="w-4 h-4" /> },
+        { name: "Jupyter", color: "bg-orange-500", icon: <Terminal className="w-4 h-4" /> },
+        { name: "MATLAB", color: "bg-purple-500", icon: <Terminal className="w-4 h-4" /> },
       ],
     },
     {
       title: "Soft Skills",
       skills: [
-        { name: "Data Storytelling", level: 90, color: "bg-data-green", icon: <Presentation className="w-4 h-4" /> },
-        { name: "Problem Solving", level: 85, color: "bg-data-blue", icon: <Network className="w-4 h-4" /> },
-        { name: "Communication", level: 95, color: "bg-data-cyan", icon: <Users className="w-4 h-4" /> },
-        { name: "Project Management", level: 80, color: "bg-indigo-500", icon: <Network className="w-4 h-4" /> },
-        { name: "Critical Thinking", level: 90, color: "bg-purple-500", icon: <BrainCircuit className="w-4 h-4" /> },
-        { name: "Business Acumen", level: 75, color: "bg-amber-500", icon: <LineChart className="w-4 h-4" /> },
+        { name: "Data Storytelling", color: "bg-data-green", icon: <Presentation className="w-4 h-4" /> },
+        { name: "Problem Solving", color: "bg-data-blue", icon: <Network className="w-4 h-4" /> },
+        { name: "Communication", color: "bg-data-cyan", icon: <Users className="w-4 h-4" /> },
+        { name: "Project Management", color: "bg-indigo-500", icon: <Network className="w-4 h-4" /> },
+        { name: "Critical Thinking", color: "bg-purple-500", icon: <BrainCircuit className="w-4 h-4" /> },
+        { name: "Business Acumen", color: "bg-amber-500", icon: <LineChart className="w-4 h-4" /> },
       ],
     },
   ];
@@ -90,28 +88,17 @@ const Skills = () => {
             >
               <h3 className="text-xl font-display font-semibold mb-6 text-center">{category.title}</h3>
               
-              <div className="space-y-5">
+              <div className="grid grid-cols-2 gap-3">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skill.name} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center">
-                        <Badge className={`mr-2 ${skill.color} text-white`}>
-                          {skill.icon}
-                        </Badge>
-                        <span className="font-medium text-sm">{skill.name}</span>
-                      </div>
-                      <span className="text-xs text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    
-                    <div className="skill-bar">
-                      <div 
-                        className={`skill-progress ${skill.color}`} 
-                        style={{ 
-                          width: `${skill.level}%`,
-                          animationDelay: `${(categoryIndex * 6 + skillIndex) * 100}ms`
-                        }}
-                      ></div>
-                    </div>
+                  <div 
+                    key={skill.name} 
+                    className="flex items-center p-2 rounded-lg hover:bg-gray-50 transition-colors"
+                    style={{ animationDelay: `${(categoryIndex * 6 + skillIndex) * 100}ms` }}
+                  >
+                    <Badge className={`mr-2 ${skill.color} text-white`}>
+                      {skill.icon}
+                    </Badge>
+                    <span className="font-medium text-sm">{skill.name}</span>
                   </div>
                 ))}
               </div>
