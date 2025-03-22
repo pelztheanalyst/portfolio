@@ -6,10 +6,12 @@ import Portfolio from "@/components/Portfolio";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import ParticleBackground from "@/components/ParticleBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      <ParticleBackground />
       <Navbar />
       <main>
         <Hero />
