@@ -1,33 +1,56 @@
+import { ArrowUp, Github, Linkedin, Mail, Twitter } from "lucide-react";
 
-import { ArrowUp } from "lucide-react";
-
-const Footer = () => {
+function Footer() {
   return (
     <footer className="py-16 bg-white/30 backdrop-blur-sm border-t border-border/50 relative">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
           <div className="md:col-span-1">
             <a href="#home" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-data-blue rounded-md flex items-center justify-center overflow-hidden">
-                <span className="text-white font-bold text-lg">DA</span>
+              <div className="w-11 h-8 bg-data-blue rounded-md flex items-center justify-center overflow-hidden">
+                <span className="text-white font-bold text-lg">P_A</span>
               </div>
-              <span className="font-display font-bold text-xl text-foreground">
-                Data<span className="text-data-blue">Analyst</span>
-              </span>
+                <span className="font-display font-bold text-xl">
+                  <span className="text-data-blue">Pelz</span>
+                  _the_
+                  <span className="text-data-blue">Analyst</span>
+                </span>
             </a>
             <p className="text-muted-foreground text-sm mb-6 max-w-md">
-              Transforming complex data into clear, actionable insights to drive 
+              Transforming complex data into clear, actionable insights to drive
               smarter business decisions and strategic growth.
             </p>
             <div className="flex space-x-4">
-              {["LinkedIn", "GitHub", "Twitter", "Medium"].map((platform) => (
+              {[
+                { 
+                  name: "LinkedIn", 
+                  url: "https://www.linkedin.com/in/pelumiadebisi", 
+                  icon: <Linkedin className="w-4 h-4" /> 
+                },
+                { 
+                  name: "GitHub", 
+                  url: "https://github.com/pelztheanalyst", 
+                  icon: <Github className="w-4 h-4" /> 
+                }, 
+                { 
+                  name: "Twitter", 
+                  url: "https://x.com/pelztheanalyst", 
+                  icon: <Twitter className="w-4 h-4" /> 
+                },
+                { 
+                  name: "Email", 
+                  url: "mailto:adebisipelumi887@gmail.com", 
+                  icon: <Mail className="w-4 h-4" /> 
+                },
+              ].map((platform) => (
                 <a
-                  key={platform}
-                  href="#"
-                  aria-label={platform}
+                  key={platform.name}
+                  href={platform.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-8 h-8 rounded-full bg-foreground/5 flex items-center justify-center text-muted-foreground hover:bg-data-blue/10 hover:text-data-blue transition-colors"
                 >
-                  {platform.charAt(0)}
+                  {platform.icon}
                 </a>
               ))}
             </div>
@@ -76,7 +99,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-6 border-t border-border/30 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Your Name. All rights reserved.
+            © {new Date().getFullYear()} Pelumi Adebisi. All rights reserved.
           </p>
 
           <a
@@ -90,6 +113,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

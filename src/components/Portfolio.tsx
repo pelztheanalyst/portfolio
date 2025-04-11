@@ -27,56 +27,63 @@ const Portfolio = () => {
   // Sample project data - replace with your actual projects
   const projectsData: Project[] = [
     {
-      id: 1,
-      title: "Sales Performance Dashboard",
-      description: "Created an interactive dashboard analyzing sales trends and performance metrics across regions, highlighting key insights that led to a 15% increase in quarterly revenue.",
-      image: "sales-dashboard",
-      technologies: ["Tableau", "SQL", "Excel"],
-      category: "Data Visualization",
-      githubUrl: "#",
-      liveUrl: "#",
-    },
-    {
-      id: 2,
-      title: "Customer Segmentation Analysis",
-      description: "Developed a customer segmentation model using clustering algorithms to identify high-value customer groups, enabling targeted marketing campaigns with a 23% higher conversion rate.",
-      image: "customer-segmentation",
-      technologies: ["Python", "scikit-learn", "Pandas", "Matplotlib"],
-      category: "Machine Learning",
-      githubUrl: "#",
-    },
-    {
-      id: 3,
-      title: "Supply Chain Optimization",
-      description: "Analyzed supply chain inefficiencies using time series forecasting and identified opportunities for inventory optimization, resulting in a 12% reduction in carrying costs.",
-      image: "supply-chain",
-      technologies: ["R", "Power BI", "Excel"],
-      category: "Predictive Analytics",
-      liveUrl: "#",
-    },
-    {
-      id: 4,
-      title: "Financial Market Analysis",
-      description: "Built a financial market analysis tool that tracks market trends and predicts potential investment opportunities using historical data and statistical models.",
-      image: "financial-analysis",
-      technologies: ["Python", "NumPy", "Plotly", "API Integration"],
+      id: "https://medium.com/@adebisipelumi887/exploring-crypto-market-dynamics-price-trends-supply-and-blockchain-insights-995d456d4e19",
+      title: "Cryptocurrency Market Analysis",
+      description: "Analyzed cryptocurrency market trends, price movements, and trading dynamics using data from CoinMarketCap, applying data preprocessing, visualization, and comparative analysis.",
+      image: "https://i.pinimg.com/736x/11/4b/cb/114bcbfbdff959312c8ea4c3588dd45a.jpg",
+      technologies: ["Python", "NumPy", "Plotly", "API Integration"], 
       category: "Financial Analytics",
-      githubUrl: "#",
-      liveUrl: "#",
+      githubUrl: "https://colab.research.google.com/drive/1-nCK4SYxTNJ8uJjvIpjOAxSzl1612BZM?usp=sharing",
     },
     {
-      id: 5,
-      title: "Healthcare Patient Flow Analysis",
-      description: "Analyzed patient flow data to identify bottlenecks in hospital operations, recommending process improvements that reduced average wait times by 30%.",
-      image: "healthcare-analytics",
-      technologies: ["SQL", "Tableau", "Process Mining"],
-      category: "Healthcare Analytics",
-      githubUrl: "#",
+      id: "https://github.com/pelztheanalyst/python-projects/blob/main/Automobile%20Data%20Analysis%20and%20Model%20Development/README.md",
+      title: "Automobile Data Analysis and Model Development",
+      description: "Explored an automobile dataset, applying data cleaning, exploratory data analysis, and machine learning techniques to uncover insights and improve predictive performance.",
+      image: "https://i.pinimg.com/736x/49/7e/db/497edbc0fd737778f6e6a43160e68a25.jpg",
+      technologies: ["Python", "scikit-learn", "Pandas", "Matplotlib"],
+      category: "Predictive Analytics",
+      githubUrl: "https://github.com/pelztheanalyst/python-projects/tree/main/Automobile%20Data%20Analysis%20and%20Model%20Development",
+    },
+    { 
+      id: "https://github.com/pelztheanalyst/Dashboards/blob/main/British%20Airways%20Review/Readme.md",
+      title: "British Airways Review",
+      description: "Analyzed British Airways customer reviews to identify trends in ratings, service quality, and passenger experience, visualizing key insights in an interactive Tableau dashboard.",
+      image: "https://i.pinimg.com/736x/7b/e6/a4/7be6a4d029963aba59da55d90b2c443b.jpg", 
+      technologies: ["Tableau", "Excel"],
+      category: "Data Visualization",
+      liveUrl: "https://public.tableau.com/app/profile/pelumi.adebisi/viz/BritishAirwaysReview-PortfolioProject/Dashboard1?publish=yes", 
+    },
+    {
+      id: "https://github.com/pelztheanalyst/sql-projects/blob/main/Workforce%20Layoffs%3A%20Data%20Cleaning%20%26%20Insights/Readme.md",
+      title: "Workforce Layoffs Trend Analysis",
+      description: "Analyzed workforce layoff data by leveraging SQL for data cleaning and exploratory data analysis, uncovering key trends and insights on company layoffs.",
+      image: "https://i.pinimg.com/736x/5d/e3/4a/5de34ac6f463b2252888cba43eb7adb8.jpg", 
+      technologies: ["SQL"],  
+      category: "Data Cleaning & EDA",
+      githubUrl: "http://github.com/pelztheanalyst/sql-projects/tree/main/Workforce%20Layoffs%3A%20Data%20Cleaning%20%26%20Insights",
+    },
+    {
+      id: "https://github.com/pelztheanalyst/Dashboards/blob/main/Data%20Professionals%20Survey/Readme.md",
+      title: "Data Professionals Survey",
+      description: "Summarized survey insights from 630 data professionals, helping clients understand industry trends in salary, job satisfaction, and career entry challenges to make informed HR andhiring decisions.",
+      image: "https://i.pinimg.com/736x/32/9c/6a/329c6a1821e7ca201f437317295cfece.jpg",
+      technologies: ["Power Bi", "Dax Measures"],
+      category: "Data Visualization",
+      githubUrl: "https://github.com/pelztheanalyst/Dashboards/tree/main/Data%20Professionals%20Survey",
+    },
+    {
+      id: "https://github.com/pelztheanalyst/Dashboards/blob/main/Coffee%20Sales%20Insight/readme.md",
+      title: "Coffee Sales Insight",
+      description: "Designed for business owners, to dashboard deliver clear insights into coffee sales, customer trends, and product performance to support smarter, data-driven decisions.",
+      image: "https://i.pinimg.com/736x/f2/e0/a7/f2e0a71b4f2f3d3ffbcd90225a6d6d48.jpg",
+      technologies: ["Excel", "Pivot Tables"],
+      category: "Data Visualization",
+      liveUrl: "https://github.com/pelztheanalyst/Dashboards/tree/main/Coffee%20Sales%20Insight",
     },
   ];
 
   const [filter, setFilter] = useState("All");
-  const categories = ["All", "Data Visualization", "Machine Learning", "Predictive Analytics", "Financial Analytics", "Healthcare Analytics"];
+  const categories = ["All", "Data Visualization", "Predictive Analytics", "Financial Analytics",];
 
   const filteredProjects = filter === "All" 
     ? projectsData 
@@ -144,9 +151,12 @@ const Portfolio = () => {
             >
               <div className={`aspect-w-16 aspect-h-9 bg-gradient-to-br ${getProjectBackground(project.id)} relative overflow-hidden`}>
                 {/* Project Image Placeholder - replace with actual images */}
-                <div className="w-full h-full flex items-center justify-center">
-                  <LineChart className="w-12 h-12 text-data-blue/50" />
-                </div>
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full h-full object-cover" 
+                />
+
                 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4">
@@ -197,7 +207,7 @@ const Portfolio = () => {
                 </div>
                 
                 <Button size="sm" variant="ghost" className="p-0 h-auto">
-                  <a href={`#project-${project.id}`} className="flex items-center text-data-blue hover:text-data-blue-dark transition-colors">
+                  <a href={`${project.id}`} target='_blank' className="flex items-center text-data-blue hover:text-data-blue-dark transition-colors">
                     <span className="text-xs font-medium">Details</span>
                     <ArrowUpRight className="w-4 h-4 ml-1" />
                   </a>
@@ -207,9 +217,19 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* View More Button */}
+        {/* New Button (resets filter) */}
         <div className="flex justify-center mt-12">
-          <Button className="bg-transparent border border-data-blue/30 text-data-blue hover:bg-data-blue/5 hover:border-data-blue/50 rounded-lg px-6 py-2">
+          <Button 
+           type="button" // ← Ensures it's not a submit button
+           onClick={() => {
+             setFilter("All");
+             // Scroll to portfolio section
+             document.getElementById('portfolio')?.scrollIntoView({ 
+               behavior: 'smooth' 
+             });
+           }}
+            className="bg-transparent border border-data-blue/30 text-data-blue hover:bg-data-blue/5 hover:border-data-blue/50 rounded-lg px-6 py-2"
+          >
             View All Projects
             <ArrowUpRight className="w-4 h-4 ml-2" />
           </Button>

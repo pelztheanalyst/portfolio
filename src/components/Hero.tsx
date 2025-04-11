@@ -28,7 +28,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1 animate-fade-in">
             <div className="inline-block px-3 py-1 mb-4 rounded-full bg-data-blue/10 text-data-blue font-medium text-sm">
-              Data Analyst Portfolio
+              Pelumi's Portfolio
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 tracking-tight">
@@ -38,7 +38,7 @@ const Hero = () => {
                 <span className="absolute bottom-1 left-0 w-full h-2 bg-data-green/30"></span>
               </span>
               into actionable 
-              <span className="text-data-blue">insights</span>
+              <span className="text-data-blue"> insights</span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
@@ -55,15 +55,20 @@ const Hero = () => {
               </Button>
             </div>
           </div>
-          
+         
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-in">
-            <div className="relative w-60 h-60 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
+            <div className="relative w-60 h-60 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white shadow-xl">
               <div className="absolute inset-0 bg-gradient-to-br from-data-blue/20 to-data-cyan/20 backdrop-blur-sm"></div>
               <div className="absolute inset-0 flex items-center justify-center text-5xl font-bold text-white opacity-70">DA</div>
-              {/* Replace with actual profile photo */}
+                <img 
+                  src="https://i.imgur.com/Usf2eru.png" 
+                  alt="Data Analyst Profile"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
               <div className="absolute inset-0 bg-data-blue/10 mix-blend-overlay"></div>
             </div>
-          </div>
+          </div> 
+
         </div>
       </div>
       

@@ -36,11 +36,12 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-data-blue rounded-md flex items-center justify-center overflow-hidden">
-            <span className="text-white font-bold text-lg">DA</span>
+          <div className="w-11 h-8 bg-data-blue rounded-md flex items-center justify-center overflow-hidden">
+            <span className="text-white font-bold text-lg">P_A</span>
           </div>
           <span className="font-display font-bold text-xl text-foreground">
-            Data<span className="text-data-blue">Analyst</span>
+          <span className="text-data-blue">Pelz</span>
+            _the_<span className="text-data-blue">Analyst</span>
           </span>
         </a>
 

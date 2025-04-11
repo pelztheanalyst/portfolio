@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Loader2, Github, Linkedin, BookOpen, Twitter } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -27,25 +27,37 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // This is where you'd implement the Resend API integration
-    // For now, we'll simulate a successful submission
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      
-      toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-        variant: "default",
+      const response = await fetch("https://formspree.io/f/mjkyjyzy", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
       });
-      
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
+
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+          variant: "default",
+        });
+        
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        throw new Error("Failed to send message");
+      }
     } catch (error) {
       toast({
         title: "Error",
@@ -94,7 +106,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground mb-1">Email</p>
-                    <p className="font-medium">yourname@example.com</p>
+                    <p className="font-medium">adebisipelumi887@gmail.com</p>
                   </div>
                 </div>
                 
@@ -104,7 +116,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground mb-1">Phone</p>
-                    <p className="font-medium">+1 (555) 123-4567</p>
+                    <p className="font-medium">+2347089593977</p>
                   </div>
                 </div>
                 
@@ -114,25 +126,49 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground mb-1">Location</p>
-                    <p className="font-medium">Your City, State, Country</p>
+                    <p className="font-medium mb-6">Lagos, Nigeria</p>
                   </div>
                 </div>
               </div>
               
               <div className="mt-8">
-                <h4 className="font-medium mb-4">Connect with me</h4>
-                <div className="flex gap-3">
-                  {["LinkedIn", "GitHub", "Twitter", "Medium"].map((platform) => (
-                    <a
-                      key={platform}
-                      href="#"
-                      className="w-10 h-10 rounded-full bg-foreground/5 flex items-center justify-center hover:bg-data-blue/10 hover:text-data-blue transition-colors"
-                    >
-                      {platform.charAt(0)}
-                    </a>
-                  ))}
+                <h4 className="font-medium mb-6">Connect with me</h4>
+                <div className="flex gap-6">
+                {[
+                { 
+                  name: "LinkedIn", 
+                  url: "https://www.linkedin.com/in/pelumiadebisi", 
+                  icon: <Linkedin className="w-6 h-6" /> 
+                },
+                { 
+                  name: "GitHub", 
+                  url: "https://github.com/pelztheanalyst", 
+                  icon: <Github className="w-6 h-6" /> 
+                }, 
+                { 
+                  name: "Twitter", 
+                  url: "https://x.com/pelztheanalyst", 
+                  icon: <Twitter className="w-6 h-6" /> 
+                },
+                { 
+                  name: "Medium", 
+                  url: "https://medium.com/@adebisipelumi887", 
+                  icon: <BookOpen className="w-6 h-6" /> 
+                },
+              ].map((platform) => (
+                <a
+                  key={platform.name}
+                  href={platform.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 rounded-full bg-foreground/5 flex items-center justify-center text-muted-foreground hover:bg-data-blue/10 hover:text-data-blue transition-colors"
+                >
+                  {platform.icon}
+                </a>
+              ))}
                 </div>
               </div>
+
             </div>
           </div>
 

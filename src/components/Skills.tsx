@@ -31,7 +31,7 @@ const Skills = () => {
       title: "Data Analysis & Visualization",
       skills: [
         { name: "Python", color: "bg-blue-500", icon: <Code className="w-4 h-4" /> },
-        { name: "R", color: "bg-sky-500", icon: <Code className="w-4 h-4" /> },
+        { name: "Looker", color: "bg-sky-500", icon: <Presentation className="w-4 h-4" /> },
         { name: "SQL", color: "bg-indigo-500", icon: <Database className="w-4 h-4" /> },
         { name: "Tableau", color: "bg-data-blue", icon: <BarChart3 className="w-4 h-4" /> },
         { name: "Power BI", color: "bg-yellow-500", icon: <PieChart className="w-4 h-4" /> },
@@ -112,10 +112,10 @@ const Skills = () => {
           
           <div className="flex flex-wrap justify-center gap-3 animate-fade-in">
             {[
-              "Data Cleaning", "Statistical Analysis", "A/B Testing", "Data Modeling", 
-              "Data Mining", "ETL Processes", "Data Quality", "API Integration",
-              "Google Analytics", "Regression Analysis", "Forecasting", "Data Warehousing",
-              "Looker", "MongoDB", "PostgreSQL", "Hadoop", "D3.js", "Data Ethics"
+              "Data Cleaning", "Statistical Analysis", "Data Wrangling", "Data Modeling", 
+              "Data Mining", "Data Transformation", "API Integration",
+              "Google Analytics", "Regression Analysis", "Workflows","Predictive Modeling",
+              "Web Scraping (BeautifulSoup, Scrapy)", "JSON/XML Parsing", "Google Colab", "Asana", "HTML & CSS", "Data Ethics",
             ].map((skill, index) => (
               <Badge 
                 key={skill} 
