@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PelztheAnalyst Portfolio | Transforming Data Into Insights</title>
+    <meta name="description" content="Professional data analyst portfolio showcasing expertise in data visualization, statistical analysis, and actionable insights that drive business decisions." />
+    <meta name="author" content="Your Name" />
+
+    <meta property="og:title" content="Data Analyst Portfolio | Transforming Data Into Insights" />
+    <meta property="og:description" content="Professional data analyst portfolio showcasing expertise in data visualization, statistical analysis, and actionable insights that drive business decisions." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Preload important assets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            overflow-x: hidden; /* Prevents horizontal scrolling */
+            overflow-y: auto; /* Enables vertical scrolling */
+            background-color: #fff;
+            height: 100vh;
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: 0; 
+            pointer-events: none;
+        }
+        #particles-js canvas {
+          pointer-events: none; /* Allows clicks while keeping interaction effects */
+       }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script type="module" src="/src/main.tsx"></script>
+   
+    <div id="particles-js"></div>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 100 },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5 },
+                "size": { "value": 3 },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#808080",  // Grey lines
+                    "opacity": 0.6,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2
+                }
+            },
+            "interactivity": {
+                "events": {
+                    "onhover": { "enable": true, "mode": "repulse" }
+                }
+            }
+        });
+    </script>
+  </body>
+</html>
